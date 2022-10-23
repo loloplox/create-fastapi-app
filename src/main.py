@@ -2,14 +2,14 @@ import os
 import shutil
 
 PROJECT_PATH = os.path.dirname(__file__)
-EXAMPLE_PATH = os.path.join(PROJECT_PATH, 'example')
+MODEL_PATH = os.path.join(PROJECT_PATH, 'model')
 
 
 def move_archives() -> list:
     archives_name = []
 
-    for archive in os.listdir(EXAMPLE_PATH):
-        path_file = os.path.join(EXAMPLE_PATH, archive)
+    for archive in os.listdir(MODEL_PATH):
+        path_file = os.path.join(MODEL_PATH, archive)
 
         if os.path.isdir(path_file):
             try:
@@ -38,7 +38,7 @@ def print_name_archive(archives_name: list):
 def sort_name_archives(name_archives: list) -> list:
     new_list_archives = []
     for archive in name_archives:
-        path_file = os.path.join(EXAMPLE_PATH, archive)
+        path_file = os.path.join(MODEL_PATH, archive)
 
         if os.path.isdir(path_file):
             new_list_archives.insert(0, f"📁 {archive}")
